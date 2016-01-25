@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  get 'person/index'
-
+  root 'person#index'
   get 'person/edit'
-
   get 'person/show'
-
   get 'person/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
