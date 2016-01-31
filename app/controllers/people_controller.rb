@@ -34,8 +34,8 @@ class PeopleController < ApplicationController
   def update
     @person = Person.find(params[:id])
     
-    if @person.update_attributes(person_params)
-      redirect_to action: 'show', :id => @person
+    if @person.update(person_param)
+      redirect_to action: 'show', id: @person
     else
       render action: 'edit'
     end
@@ -51,5 +51,9 @@ class PeopleController < ApplicationController
     # Allow only white listed parameters
     def person_params
       params.require(:people).permit(:name, :weight, :height, :color)
+    end
+    
+    def person_param
+      params.require(:person).permit(:name, :weight, :height, :color)
     end
 end

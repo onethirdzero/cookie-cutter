@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'people/list'
+  root 'people#list'
   get 'people/show'
   get 'people/new'
   post 'people/create'

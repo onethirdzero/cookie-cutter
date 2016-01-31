@@ -1,0 +1,14 @@
+<!--Use named paths for link_to tags-->
+<h1><%= @person.name %></h1>
+
+<p>
+   <strong>Weight: </strong><%= @person.weight %><br />
+   <strong>Height: </strong><%= @person.height %><br />
+   <strong>Color: </strong><%= @person.color %><br />
+   <strong>Date Created: </strong><%= @person.created_at %><br />
+</p>
+
+<hr />
+<!--Horizontal rule-->
+
+<%= link_to 'Back', action: 'list' %>

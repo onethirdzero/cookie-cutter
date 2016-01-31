@@ -1,0 +1,15 @@
+<!--Use named paths for link_to tags-->
+<h1>Edit Person Detail</h1>
+
+<%= form_for @person, url: {action: 'update' , id: @person} do |f| %>
+
+<p>Name: <%= f.text_field 'name' %></p>
+<p>Weight: <%= f.text_field 'weight' %></p>
+<p>Height: <%= f.text_field 'height' %></p>
+<p>Color: <%= f.text_field 'color' %></p>
+
+<%= f.submit "Save changes" %>
+<% end %>
+
+</br>
+<%= link_to 'Back', action: 'list' %>

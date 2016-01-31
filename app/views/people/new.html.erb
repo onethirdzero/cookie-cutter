@@ -1,0 +1,22 @@
+ <!--Use named paths for link_to tags-->
+<h1>Add new person</h1>
+
+<%= form_tag action: 'create' do %>
+<p><label for = "person_name">Name</label>: 
+  <%= text_field 'people', 'name' %></p>
+
+<p><label for = "person_weight">Weight</label>: 
+  <%= text_field 'people', 'weight' %></p>
+
+<p><label for = "person_height">Height</label>:
+  <%= text_field 'people', 'height' %></p>
+
+<p><label for = "person_color">Color</label>:
+  <%= text_field 'people', 'color' %></p>
+<br/>
+
+<%= submit_tag "Create" %>
+
+<% end -%>
+<br/>
+<%= link_to 'Back', action: 'list' %>

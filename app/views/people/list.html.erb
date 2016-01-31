@@ -1,0 +1,20 @@
+<!--Use named paths for link_to tags-->
+<h1>People Index</h1>
+<% if @people.blank? %>
+<p>There are not any people currently in the system.</p>
+<% else %>
+<p>These are the current people in our system</p>
+
+<ul id = "people">
+   <% @people.each do |person| %>
+   <li>
+      <%= link_to person.name, {action: 'show', id: person.id} -%>
+      <b> <%= link_to 'Edit', {action: 'edit', id: person.id} %></b>
+      <b> <%= link_to "Delete", {action: 'delete', id: person.id},
+      :confirm => "Are you sure you want to delete this item?" %></b>
+   </li>
+   <% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Add new person", action: 'new' %></p>
