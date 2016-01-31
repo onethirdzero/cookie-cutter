@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  root 'person#index'
-  get 'person/edit'
-  get 'person/show'
-  get 'person/new'
-
+  get 'people/list'
+  get 'people/show'
+  get 'people/new'
+  post 'people/create'
+  get 'people/edit'
+  patch 'people/update'
+  get 'people/delete'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
