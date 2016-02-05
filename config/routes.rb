@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   root 'people#list'
-  get 'people/show'
-  get 'people/new'
+  
+  get 'show' => 'people#show'
+  get 'new' =>  'people#new'
   post 'people/create'
-  get 'people/edit'
+  get 'edit' => 'people#edit'
   patch 'people/update'
-  get 'people/delete'
+  get 'delete' => 'people#delete'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

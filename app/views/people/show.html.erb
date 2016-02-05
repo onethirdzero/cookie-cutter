@@ -1,11 +1,17 @@
-<!--Use named paths for link_to tags-->
-<h1><%= @person.name %></h1>
+<div class="container">
+   <div class="jumbotron" id="show-jumbotron">
+      <h1><%= @person.name %></h1>
+      <p class="show-text">
+         <strong>Weight: </strong><%= @person.weight %><br>
+         <strong>Height: </strong><%= @person.height %><br>
+         <strong>Color: </strong><%= @person.color %><br>
+         <strong>Date Created: </strong><%= @person.created_at %><br>
+      </p>
+   </div>
+</div>
 
-<p>
-   <strong>Weight: </strong><%= @person.weight %><br />
-   <strong>Height: </strong><%= @person.height %><br />
-   <strong>Color: </strong><%= @person.color %><br />
-   <strong>Date Created: </strong><%= @person.created_at %><br />
-</p>
-
-<%= link_to 'Back', action: 'list' %>
+ 
+<ul class="pager">
+  <li><%= link_to 'Back', root_path %></li>
+  <li><%= link_to 'Edit', {action: 'edit', id: @person.id} %></li>
+</ul>
