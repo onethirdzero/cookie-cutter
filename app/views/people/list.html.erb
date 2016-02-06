@@ -8,7 +8,7 @@
    <div class="row">
     <%@people.each do |person| %>
     <div class="col-sm-4" style="background-color:<%= person.color %>;
-    height:<%= person.height %>px; width:<%= person.weight %>px">
+    height:<%= person.height / 1.3 %>px; width:<%= person.weight * 1.5  %>px">
       <% if person.color == 'black' %>
         <h3><%= link_to person.name, {action: 'show', id: person.id},
               {:style=>'color:#ffffff', :class => "css_class"} %></h3>
