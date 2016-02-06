@@ -7,13 +7,29 @@
 <div class="container">
    <div class="row">
     <%@people.each do |person| %>
-    <div class="col-sm-4">
-      <h3><%= link_to person.name, {action: 'show', id: person.id} %></h3>
-      <p>
-         <%= link_to 'Edit', {action: 'edit', id: person.id} %> 
-         <%= link_to "Delete", {action: 'delete', id: person.id},
-         data: {:confirm => "Are you sure you want to delete this item?"} %>
-      </p>
+    <div class="col-sm-4" style="background-color:<%= person.color %>;
+    height:<%= person.height %>px; width:<%= person.weight %>px">
+      <% if person.color == 'black' %>
+        <h3><%= link_to person.name, {action: 'show', id: person.id},
+              {:style=>'color:#ffffff', :class => "css_class"} %></h3>
+        <p>
+           <%= link_to 'Edit', {action: 'edit', id: person.id}, 
+             {:style=>'color:#ffffff', :class => "css_class"} %> 
+           <%= link_to "Delete", {action: 'delete', id: person.id},
+           {data: {:confirm => "Are you sure you want to delete this item?"}, 
+             :style=>'color:#ffffff', :class => "css_class"} %>
+        </p>
+      <% else %>
+        <h3><%= link_to person.name, {action: 'show', id: person.id},
+              {:style=>'color:#000000', :class => "css_class"} %></h3>
+        <p>
+           <%= link_to 'Edit', {action: 'edit', id: person.id}, 
+             {:style=>'color:#000000', :class => "css_class"} %> 
+           <%= link_to "Delete", {action: 'delete', id: person.id},
+           {data: {:confirm => "Are you sure you want to delete this item?"}, 
+             :style=>'color:#000000', :class => "css_class"} %>
+        </p>
+      <% end %>
     </div>
    <% end %>
    </div>
